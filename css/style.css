@@ -1,0 +1,160 @@
+
+.row {
+    margin: 10px 0 10px 0;
+}
+.item-header {
+    margin: 10px 0;
+    border-top: 1px solid #acacad;
+    height: 45px;
+    border-bottom: 1px solid #acacad;
+}
+.item-header div {
+    margin: 10px 0;
+}
+
+.product-container .product-details .product-qty input {
+    width: 40%;
+    text-align: center;
+}
+
+.product-container .product-details .product-prize {
+    text-align: center;
+}
+.product-container .product-details {
+    padding: 20px 0 20px 0;
+    margin: 0;
+    border-bottom: 1px solid #acacad;
+}
+
+.product-container .product-details .product-description .description .description-function-desktop ul li{
+    color: #000000;
+    font-size: 1.3rem;
+    display: inline-block;
+    padding: 0;
+}
+.product-container .product-details .product-description .description .description-function-desktop ul li button {
+    background: none;
+    border: none;
+    color: gray;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 0px; 
+}
+
+.product-container .product-details .product-description .description .description-function-desktop ul li:not(:first-child):before {
+    content: " | ";
+}
+.modal-colour label {
+    width: 35px;
+    height: 25px;
+    margin: 0 5px;
+    border-radius: 2;
+    display: inline-block;
+    line-height: 22px;
+    text-align: center;
+    color: black;
+    font-size: 40pt;
+    cursor: pointer;
+    position: relative;
+}
+.modal-body .close-model {
+    position: absolute;
+    top: 0;
+    left: 98%;
+    background: #fff;
+}
+.modal-body .modal-edit {
+    margin: 10px;
+    widows: 100px;
+    font-size: 1.4rem;
+}
+.modal-body .modal-size-selection {
+    margin: 0 15px;
+}
+.footer-container .cart-container .promo-code-container .promo-code-title {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.footer-container .cart-container .promo-code-container .promo-code-input input {
+    height: 50px;
+    width: 80%;
+    border: 1px solid #acacad;
+    text-align: center;
+}
+.footer-container .cart-container .promo-code-container .promo-code-button button {
+    background-color: #ffffff;
+    height: 50px;
+    width: 80%;
+    border-style: solid;
+    text-transform: uppercase;
+}
+.footer-container .cart-container .prize-container {
+    margin: 20px 0;
+    text-transform: uppercase;
+    border-top: 4px solid #acacad;
+    border-bottom: 4px solid #acacad;
+}
+.footer-container .cart-container .prize-container .prize-total, .footer-container .cart-container .prize-container .prize-promo, .footer-container .cart-container .prize-container .prize-shipping, .footer-container .cart-container .prize-container .prize-grandtotal {
+    padding: 20px 0;
+    display: flex;
+}
+.prize-promo .prize-title, .footer-container .cart-container .prize-container .prize-shipping .prize-title, .footer-container .cart-container .prize-container .prize-grandtotal .prize-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: left;
+    width: 80%;
+}
+.footer-container .cart-container .prize-container .prize-total .prize-value, .footer-container .cart-container .prize-container .prize-promo .prize-value, .footer-container .cart-container .prize-container .prize-shipping .prize-value, .footer-container .cart-container .prize-container .prize-grandtotal .prize-value {
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 20%;
+    text-align: right;
+}
+.footer-container .cart-container .prize-container .prize-total .prize-value, .footer-container .cart-container .prize-container .prize-promo .prize-value, .footer-container .cart-container .prize-container .prize-shipping .prize-value, .footer-container .cart-container .prize-container .prize-grandtotal .prize-value {
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 20%;
+    text-align: right;
+}
+.footer-container .cart-container .prize-container .prize-total, .footer-container .cart-container .prize-container .prize-promo, .footer-container .cart-container .prize-container .prize-shipping, .footer-container .cart-container .prize-container .prize-grandtotal {
+    padding: 20px 0;
+    display: flex;
+}
+.footer-container .cart-container .prize-container .prize-total .prize-title, .footer-container .cart-container .prize-container .prize-promo .prize-title, .footer-container .cart-container .prize-container .prize-shipping .prize-title, .footer-container .cart-container .prize-container .prize-grandtotal .prize-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: left;
+    width: 80%;
+}
+.footer-container .cart-container .prize-container .prize-total .shipping-value, .footer-container .cart-container .prize-container .prize-promo .shipping-value, .footer-container .cart-container .prize-container .prize-shipping .shipping-value, .footer-container .cart-container .prize-container .prize-grandtotal .shipping-value {
+    font-size: 1.2rem;
+    font-weight: 200;
+    width: 20%;
+    text-align: right;
+}
+.footer-container .cart-container .prize-container .prize-grandtotal {
+    display: flex;
+    border-top: 1px solid gray;
+}
+.footer-container .cart-container .checkout-container {
+    display: block;
+}
+.footer-container .cart-container .checkout-container .checkout-header {
+    float: right;
+    clear: right;
+}
+.footer-container .cart-container .checkout-container .checkout-footer {
+    float: right;
+    clear: right;
+    font-size: 1.4rem;
+    font-weight: 200;
+}
+
+.footer-container .cart-container .prize-container .prize-grandtotal .grandtotal-value {
+    font-size: 2rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: right;
+}
