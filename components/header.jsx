@@ -1,10 +1,11 @@
 import React from 'react';
 
 
+  
 const GridHeader =(props) => (
     <div>
         <div className="row">
-            <h1>Shopping Cart item Bag</h1>
+            <h1>Shopping Cart Bag</h1>
             <section className="item-header">
                 <div className="col-md-9 item-description">
                     <span className="item-count">4</span> Products

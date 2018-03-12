@@ -3,6 +3,7 @@ import OpenModel from './openModel.jsx';
 import ProdDescription from './prod-description.jsx';
 import dataJson from '../script/cartData.json';
 import FooterComponent from './footer.jsx';
+import ImageModel from './imageModel.jsx'
 
 
 let updatedSize = '',
@@ -33,11 +34,8 @@ class ProductMain extends React.Component {
     }
 
     handleGrandTotal(grandTot) {
-        console.log("grandTotal", this.state)
         if(grandTot) {
             const totVal = grandTot + this.state.grandTotal
-            //console.log("TotVal", totVal)
-            //console.log("here",grandPrice);
             this.setState ({grandTotal : totVal})
         }
     }
@@ -77,6 +75,7 @@ class ProductItems extends React.Component {
         
         this.state = {
             selectedOption : undefined,
+            imageModel : undefined,
             selectedSize: '',
             selectedColor : '',
             totalPrice :'',
@@ -85,6 +84,7 @@ class ProductItems extends React.Component {
         }
         this.updateGrandTotal = this.updateGrandTotal.bind(this);
         this.removeProdItem = this.removeProducts.bind(this);
+        this.showImageModal = this.showImageModal.bind(this);
     }
 
     editClickHandle (e) {
@@ -92,17 +92,20 @@ class ProductItems extends React.Component {
         this.setState (() => ({ 
            selectedOption : editValue 
         }));
+        
     }
 
     closeHanldeClick() { 
         this.setState (() => ({
-            selectedOption : undefined
+            selectedOption : undefined,
+            imageModel : undefined,
         }));
     }
     
     editSaveHandleClick (e) {
         this.setState (() => ({
             selectedOption : undefined,
+            imageModel : undefined,
             selectedSize: updatedSize,
             selectedQty: updatedQty,
             totalPrice : this.props.data.p_price * updatedQty,
@@ -115,7 +118,7 @@ class ProductItems extends React.Component {
             prodTot = parseInt(prodTot - this.props.data.p_price)
         }
         
-        console.log(grandTot + "ProdPrice"+ prodTot);
+      //  console.log(grandTot + "ProdPrice"+ prodTot);
         this.updateGrandTotal(parseInt(prodTot))
     }
     
@@ -124,16 +127,23 @@ class ProductItems extends React.Component {
     }
 
     onChangeSizeSelect (e) {
-        updatedSize= e.target.value.toString();
+        console.log("test"+e)
+        updatedSize= e.target.value.toString(); 
+        this.setState({selectedSize:updatedSize})
     }
 
     onChangeQuantity (e) {
-        updatedQty = e.target.value
+        updatedQty = e.target.value;
+        this.setState({selectedQty:updatedQty})
     }
 
     removeProducts(e) {
-        //console.log(this.state);
         this.props.removeProducts(this.props.data.p_id)
+    }
+
+    showImageModal() {
+        const imageId= this.props.data.p_id;
+        this.setState({imageModel: imageId})
     }
 
     render() {
@@ -144,6 +154,8 @@ class ProductItems extends React.Component {
                         <OpenModel 
                             selectedOption = {this.state.selectedOption} 
                             data={this.props.data} 
+                            quantity={this.state.selectedQty}
+                            selectedSize={this.state.selectedSize}
                             closeHanldeClick = {this.closeHanldeClick}
                             editSaveHandleClick = {this.editSaveHandleClick}
                             onChangeSizeSelect = {this.onChangeSizeSelect}
@@ -151,10 +163,15 @@ class ProductItems extends React.Component {
                             grandTotal = {this.state.finalGrandTotal}
                             updateGrandTotal = {this.updateGrandTotal}
                         />
+                        <ImageModel
+                        data={this.props.data}
+                        imageModel={this.state.imageModel} 
+                        closeHanldeClick = {this.closeHanldeClick} />
+                        
                         <div className="col-md-9 product-description">
                             <div className="row">
-                                <div className="col-md-3  col-5 image">
-                                    <img src={'./assets/T'+this.props.data.p_id+'.jpg'}/>
+                                <div className="col-md-3  col-5 image" >
+                                    <img src={'./assets/T'+this.props.data.p_id+'.jpg'} onClick={this.showImageModal}/>
                                 </div>
                                 <ProdDescription data={this.props.data} 
                                 editClickHandle = {this.editClickHandle }

@@ -16,7 +16,6 @@ const ProdDescription = (props) => (
                 <li ><button type="button" data-control="userBtn" className="remove-item" onClick={props.removeProdItem}><span className="fa fa-times"></span>
                     Remove</button>
                 </li>
-                <li>Save for later</li>
             </ul>
         </div>	
     </div>
