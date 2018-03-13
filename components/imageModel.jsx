@@ -10,12 +10,14 @@ export default class ImageModel extends React.Component {
                 isOpen={!!this.props.imageModel}
                 contentLabel="Modal"    
                 onRequestClose={this.props.closeHanldeClick}
+                className="imageModal"
             >
-            
-                <div>
+            <div>
+                <img src={'./assets/T'+this.props.data.p_id+'.jpg'}/>
                 
-                </div>
-                    
+            </div>
+            <button type="submit" className="close-model" onClick={this.props.closeHanldeClick}>X</button>
+
             </Modal>
             
         )

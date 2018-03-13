@@ -45,6 +45,9 @@
 .product-container .product-details .product-description .description .description-function-desktop ul li:not(:first-child):before {
     content: " | ";
 }
+.product-description img{
+    width: 70%;
+}
 .modal-colour label {
     width: 35px;
     height: 25px;
@@ -157,4 +160,22 @@
     font-weight: 500;
     width: 100%;
     text-align: right;
+}
+.imageModal {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    padding: 30px;
+    border: 2px solid #acacad;
+}
+.close-model {
+    position: absolute;
+    top:0;
+    left: 95%;
+    background-color: aquamarine;
+    color: #000000;
+    width: 20px;
+    font-size: 12px
 }
